@@ -69,6 +69,17 @@ h2{font-size:19px;font-weight:800;line-height:1.25;margin-bottom:10px}
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--border);transform:translateY(110%);transition:transform .25s}
 .sticky.show{transform:none}
 .sticky .btn{max-width:388px;margin:0 auto}
+
+/* Tugma effektlari — bosiladigan ekani ko'rinsin */
+.btn{position:relative;overflow:hidden;isolation:isolate;border-bottom:4px solid #157a3e;animation:btnPuls 2s ease-in-out infinite;transition:transform .12s ease,border-width .12s ease,box-shadow .12s ease}
+.btn:after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(110deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 100%);transform:skewX(-20deg);animation:btnShine 2.8s ease-in-out infinite;z-index:-1;pointer-events:none}
+.btn .arr{display:inline-block;animation:btnArr 1s ease-in-out infinite}
+.btn:hover{filter:brightness(1.06)}
+.btn:active{transform:translateY(3px) scale(.99);border-bottom-width:1px;box-shadow:0 2px 6px rgba(30,158,82,.25);animation:none}
+@keyframes btnPuls{0%,100%{transform:scale(1);box-shadow:0 5px 16px rgba(30,158,82,.28),0 0 0 0 rgba(30,158,82,.45)}50%{transform:scale(1.025);box-shadow:0 8px 22px rgba(30,158,82,.35),0 0 0 10px rgba(30,158,82,0)}}
+@keyframes btnShine{0%{left:-60%}55%,100%{left:130%}}
+@keyframes btnArr{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+@media (prefers-reduced-motion:reduce){.btn,.btn:after,.btn .arr{animation:none}}
 </style>
 </head>
 <body>
@@ -89,7 +100,7 @@ h2{font-size:19px;font-weight:800;line-height:1.25;margin-bottom:10px}
   </div>
   <div class="form-card" id="regForm">
     <div class="form-top"><span class="price"><del>997 000</del><b>BEPUL</b></span></div>
-    <a class="btn btn-tg js-join" href="rahmat.html">DARSDA BEPUL QATNASHISH →</a>
+    <a class="btn btn-tg js-join" href="rahmat.html">DARSDA BEPUL QATNASHISH <span class="arr">→</span></a>
   </div>
   <div class="bonus" id="bonusBox">
     <i aria-hidden="true">🎁</i>
@@ -113,10 +124,10 @@ h2{font-size:19px;font-weight:800;line-height:1.25;margin-bottom:10px}
   </section>
   <div class="final">
     <p>Joyingizni hozir band qiling — bepul</p>
-    <a class="btn btn-tg js-join" href="rahmat.html">DARSDA BEPUL QATNASHISH →</a>
+    <a class="btn btn-tg js-join" href="rahmat.html">DARSDA BEPUL QATNASHISH <span class="arr">→</span></a>
   </div>
 </main>
-<div class="sticky" id="sticky"><a class="btn js-join" href="rahmat.html">DARSDA BEPUL QATNASHISH →</a></div>
+<div class="sticky" id="sticky"><a class="btn js-join" href="rahmat.html">DARSDA BEPUL QATNASHISH <span class="arr">→</span></a></div>
 </div>
 <script>
 (function(){
