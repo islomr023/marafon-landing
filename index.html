@@ -122,7 +122,9 @@ h2{font-size:19px;font-weight:800;line-height:1.25;margin-bottom:10px}
 'use strict';
 /* SOZLAMALAR — har oqimda faqat shu blok o'zgaradi */
 var MARAFON    = { start:"2026-11-18", days:3, time:"21:00" };
-var BONUS      = "Yopiq Telegram kanalga ulanishingiz bilan sovg'a: <b>«Erkak hech qachon aytmaydigan 5 narsa»</b> qo'llanmasi. Har efir oxirida esa — yana <b>BONUSlar</b>";
+var BONUS      = "";   // vaqtincha yashirilgan. Qaytarish: matnni shu qo'shtirnoq ichiga yozing
+var SANOQ      = false; // "Boshlanishiga: ..." qatori. Ko'rsatish uchun: true
+// ESKI BONUS MATNI: "Yopiq Telegram kanalga ulanishingiz bilan sovg'a: <b>«Erkak hech qachon aytmaydigan 5 narsa»</b> qo'llanmasi. Har efir oxirida esa — yana <b>BONUSlar</b>"
 var METRIKA_ID = 113347925;
 var RAHMAT     = "rahmat.html";
 
@@ -143,6 +145,7 @@ for(var i=0;i<MARAFON.days;i++) kunlar.push(uzDay(i));
 
 (function(){
   var el=document.getElementById("starts");
+  if(!SANOQ){ el.hidden=true; return; }
   function tick(){
     var left=Math.floor((startAt-Date.now())/1000);
     if(left>0){
