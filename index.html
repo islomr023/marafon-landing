@@ -176,8 +176,7 @@ for(var i=0;i<MARAFON.days;i++) kunlar.push(uzDay(i));
 if(BONUS){ document.querySelector("[data-bonus]").innerHTML=BONUS; }
 else { document.getElementById("bonusBox").hidden=true; }
 
-var BOT="Simonaladyyfit_bot";   // tugma -> Telegram bot (nomer -> kanal havolasi). Eski: rahmat.html
-var NEXT_URL=(function(){ try{ var p=new URLSearchParams(location.search); var u=(p.get("utm_content")||p.get("utm_campaign")||"sayt").replace(/[^A-Za-z0-9_-]/g,"_").slice(0,60); return "https://t.me/"+BOT+"?start="+u; }catch(_){ return "https://t.me/"+BOT+"?start=sayt"; } })();
+var NEXT_URL=RAHMAT+location.search;   // tugma -> rahmat sahifa (Purchase) -> bot
 var going=false;
 [].forEach.call(document.querySelectorAll(".js-join"),function(a){
   a.href=NEXT_URL;
