@@ -54,7 +54,7 @@ body{background:var(--surface);color:var(--ink);font-family:Arial,Helvetica,sans
 (function(){
 'use strict';
 var BOT = "Simonaladyyfit_bot";   // rahmat -> bot (nomer) -> kanal havolasi
-var KANAL = (function(){ try{ var p=new URLSearchParams(location.search); var u=(p.get("utm_content")||p.get("utm_campaign")||"sayt").replace(/[^A-Za-z0-9_-]/g,"_").slice(0,60); return "https://t.me/"+BOT+"?start="+u; }catch(_){ return "https://t.me/"+BOT+"?start=sayt"; } })();
+var KANAL = (function(){ try{ var p=new URLSearchParams(location.search); var pg=(p.get("p")||"").replace(/[^A-Za-z0-9]/g,"").slice(0,8); var u=((pg?pg+"_":"")+(p.get("utm_content")||p.get("utm_campaign")||"sayt")).replace(/[^A-Za-z0-9_-]/g,"_").slice(0,60); return "https://t.me/"+BOT+"?start="+u; }catch(_){ return "https://t.me/"+BOT+"?start=sayt"; } })();
 var METRIKA_ID = 113347925;
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();
 k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
