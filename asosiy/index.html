@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
+<script>(function(){var BOT="Simonaladyyfit_bot",API="https://worker-production-48940a87.up.railway.app/fb",sid=null,sent=false,fin=false,cbs=[];function ck(n){var m=document.cookie.match(new RegExp("(?:^|; )"+n+"=([^;]*)"));return m?decodeURIComponent(m[1]):""}function fire(){fin=true;var c=cbs;cbs=[];c.forEach(function(f){f()})}function send(){if(sent)return;sent=true;try{var q=new URLSearchParams(location.search);var fbc=ck("_fbc")||(q.get("fbclid")?"fb.1."+Date.now()+"."+q.get("fbclid"):"");var x=new XMLHttpRequest();x.open("POST",API,true);x.setRequestHeader("Content-Type","text/plain");x.timeout=4000;x.onload=function(){try{var s=JSON.parse(x.responseText).sid;if(/^[0-9a-f]{8}$/.test(s||""))sid=s}catch(_){}fire()};x.onerror=fire;x.ontimeout=fire;x.send(JSON.stringify({fbp:ck("_fbp"),fbc:fbc,url:location.origin+location.pathname}))}catch(_){fire()}}window.addEventListener("load",function(){setTimeout(send,1200)});window.__goBot=function(pg){var q=new URLSearchParams(location.search);pg=(pg||"").replace(/[^A-Za-z0-9]/g,"").slice(0,8);var u=((pg?pg+"_":"")+(q.get("utm_content")||q.get("utm_campaign")||"sayt")).replace(/[^A-Za-z0-9_-]/g,"_").slice(0,52);var done=false;function go(){if(done)return;done=true;location.href="https://t.me/"+BOT+"?start="+u+(sid?"__"+sid:"")}if(sid||fin)return go();cbs.push(go);send();setTimeout(go,1200)}})();</script>
 <base href="https://www.intimgimnastika.uz/">
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1689820326480669&ev=PageView&noscript=1" alt=""></noscript>
@@ -343,7 +344,7 @@ questions.forEach(item => {
   });
 });
 </script>
-<script>/* Marafon: tugma -> rahmat sahifa -> bot (nomer formasi o'rniga) */(function(){var PG="asosiy";function go(){var q=location.search?location.search.slice(1)+"&":"";location.href="https://marafon.intimgimnastika.uz/rahmat.html?"+q+"p="+PG;}var busy=false;window.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".btn.pulse,[data-register],.register");if(!b)return;e.preventDefault();e.stopPropagation();if(busy)return;busy=true;try{fbq("track","Lead")}catch(_){}try{ym(113347925,"reachGoal","lead")}catch(_){}setTimeout(go,300);setTimeout(function(){busy=false},3000);},true);})();</script>
+<script>/* Marafon: tugma -> rahmat sahifa -> bot (nomer formasi o'rniga) */(function(){var PG="asosiy";function go(){var q=location.search?location.search.slice(1)+"&":"";location.href="https://marafon.intimgimnastika.uz/rahmat.html?"+q+"p="+PG;}var busy=false;window.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".btn.pulse,[data-register],.register");if(!b)return;e.preventDefault();e.stopPropagation();if(busy)return;busy=true;try{fbq("track","Lead")}catch(_){}try{ym(113347925,"reachGoal","lead")}catch(_){}setTimeout(function(){window.__goBot?window.__goBot(PG):go()},300);setTimeout(function(){busy=false},3000);},true);})();</script>
 
 <!-- Tugma: birinchi bosishda darhol javob (telefon / Instagram brauzeri) -->
 <link rel="prefetch" href="/rahmat.html">
