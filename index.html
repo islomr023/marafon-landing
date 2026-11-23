@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
+<script>(function(){var BOT="Simonaladyyfit_bot",API="https://worker-production-48940a87.up.railway.app/fb",sid=null,sent=false,fin=false,cbs=[];function ck(n){var m=document.cookie.match(new RegExp("(?:^|; )"+n+"=([^;]*)"));return m?decodeURIComponent(m[1]):""}function fire(){fin=true;var c=cbs;cbs=[];c.forEach(function(f){f()})}function send(){if(sent)return;sent=true;try{var q=new URLSearchParams(location.search);var fbc=ck("_fbc")||(q.get("fbclid")?"fb.1."+Date.now()+"."+q.get("fbclid"):"");var x=new XMLHttpRequest();x.open("POST",API,true);x.setRequestHeader("Content-Type","text/plain");x.timeout=4000;x.onload=function(){try{var s=JSON.parse(x.responseText).sid;if(/^[0-9a-f]{8}$/.test(s||""))sid=s}catch(_){}fire()};x.onerror=fire;x.ontimeout=fire;x.send(JSON.stringify({fbp:ck("_fbp"),fbc:fbc,url:location.origin+location.pathname}))}catch(_){fire()}}window.addEventListener("load",function(){setTimeout(send,1200)});window.__goBot=function(pg){var q=new URLSearchParams(location.search);pg=(pg||"").replace(/[^A-Za-z0-9]/g,"").slice(0,8);var u=((pg?pg+"_":"")+(q.get("utm_content")||q.get("utm_campaign")||"sayt")).replace(/[^A-Za-z0-9_-]/g,"_").slice(0,52);var done=false;function go(){if(done)return;done=true;location.href="https://t.me/"+BOT+"?start="+u+(sid?"__"+sid:"")}if(sid||fin)return go();cbs.push(go);send();setTimeout(go,1200)}})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1e9e52">
@@ -180,7 +181,7 @@ var going=false;
     if(going) return; going=true;
     try{ fbq("track","Lead"); }catch(_){}
     goal("lead");
-    setTimeout(function(){ location.href=NEXT_URL; },300);
+    setTimeout(function(){ window.__goBot?window.__goBot(""):(location.href=NEXT_URL); },300);
     setTimeout(function(){ going=false; },3000);
   });
 });
